@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "565969626142",
+    "firebase_url": "https://notjpmc-570ac.firebaseio.com",
+    "project_id": "notjpmc-570ac",
+    "storage_bucket": "notjpmc-570ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565969626142:android:4ec8f42be5ea1950",
+        "android_client_info": {
+          "package_name": "com.example.android.notjpmc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "565969626142-bnq58lk2tlk83iausabjgtne0ul4jh24.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.notjpmc",
+            "certificate_hash": "26ad2cb47536383a9817c9d72b0084b5fd1c7ae3"
+          }
+        },
+        {
+          "client_id": "565969626142-2dsvskndn81l69ql6b000vj5kf54cim9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiSx1q0YU9H7KLNzlWHgpn68RfURVE7BU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "565969626142-2dsvskndn81l69ql6b000vj5kf54cim9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
