@@ -1,3 +1,4 @@
+//noinspection GradleCompatible
 apply plugin: 'com.android.application'
 
 android {
@@ -32,7 +33,10 @@ dependencies {
 
     //firebase ui authentication and database dependencies
     compile 'com.firebaseui:firebase-ui-auth:3.1.0'
-    implementation 'com.google.firebase:firebase-auth:11.4.2'
+    //noinspection GradleCompatible
+    implementation 'com.google.firebase:firebase-auth:11.8.0'
     implementation 'com.google.firebase:firebase-database:11.8.0'
 
 }
+
+apply plugin: 'com.google.gms.google-services'
