@@ -14,7 +14,7 @@ public final class NotJPMCContract {
     public static abstract class NotJPMCEntry implements BaseColumns{
         public static final String TABLE_NAME = "person";
         public static final String COLUMN_NAME_ENTRY = "person_id";
-        public static final String COLUMN_NAME_TITLE = "title";
-        public static final String COLUMN_NAME_SUBTITLE = "subtitle";
+        public static final String COLUMN_NAME_FIRST_NAME = "John";
+        public static final String COLUMN_NAME_LAST_NAME = "Doe";
     }
 }

@@ -11,7 +11,7 @@ import net.sqlcipher.database.SQLiteOpenHelper;
  * Created by Ryne on 1/10/2018.
  */
 
-public class NotJPMCDbHelper extends SQLiteOpenHelper{
+public class NotJPMCDbHelper extends SQLiteOpenHelper {
 
     //TODO: Solve mem leak caused by static instance variable
     private static NotJPMCDbHelper notJPMCDbHelper;
@@ -30,7 +30,7 @@ public class NotJPMCDbHelper extends SQLiteOpenHelper{
                     NotJPMCContract.NotJPMCEntry.COLUMN_NAME_SUBTITLE + TEXT_TYPE +
                     " )"; //Took class variables to populate database in Helper from Contract
 
-    //SQL_DELETE_ENTRIES for locating table if it exists
+    //SQL_DELETE_ENTRIES for preventing duplicate table if it exists
     public static final String SQL_DELETE_ENTRIES = "DROP TABLE IF EXISTS " +
             NotJPMCContract.NotJPMCEntry.TABLE_NAME;
 
@@ -40,8 +40,8 @@ public class NotJPMCDbHelper extends SQLiteOpenHelper{
     }
 
     //synchronization to access a table once per activity
-    static public synchronized NotJPMCDbHelper getInstance (Context context){
-        if (notJPMCDbHelper == null){
+    static public synchronized NotJPMCDbHelper getInstance(Context context) {
+        if (notJPMCDbHelper == null) {
             notJPMCDbHelper = new NotJPMCDbHelper(context);
         }
         return notJPMCDbHelper;
@@ -50,10 +50,13 @@ public class NotJPMCDbHelper extends SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase db) {
 
+        db.execSQL(SQL_CREATE_ENTRIES);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+        db.execSQL(SQL_DELETE_ENTRIES);
+        onCreate(db);
     }
 }
