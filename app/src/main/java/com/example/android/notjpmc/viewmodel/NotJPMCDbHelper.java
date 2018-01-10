@@ -26,8 +26,8 @@ public class NotJPMCDbHelper extends SQLiteOpenHelper {
             "CREATE TABLE " + NotJPMCContract.NotJPMCEntry.TABLE_NAME + " (" +
                     NotJPMCContract.NotJPMCEntry._ID + " INTEGER PRIMARY KEY," + //id primary key
                     NotJPMCContract.NotJPMCEntry.COLUMN_NAME_ENTRY + TEXT_TYPE + "," +
-                    NotJPMCContract.NotJPMCEntry.COLUMN_NAME_TITLE + TEXT_TYPE + "," +
-                    NotJPMCContract.NotJPMCEntry.COLUMN_NAME_SUBTITLE + TEXT_TYPE +
+                    NotJPMCContract.NotJPMCEntry.COLUMN_NAME_FIRST_NAME + TEXT_TYPE + "," +
+                    NotJPMCContract.NotJPMCEntry.COLUMN_NAME_LAST_NAME + TEXT_TYPE +
                     " )"; //Took class variables to populate database in Helper from Contract
 
     //SQL_DELETE_ENTRIES for preventing duplicate table if it exists
