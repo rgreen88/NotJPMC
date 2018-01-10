@@ -17,8 +17,8 @@ public class NotJPMCDbHelper extends SQLiteOpenHelper{
     private static NotJPMCDbHelper notJPMCDbHelper;
 
     //database ver and name creation
-    public static final int DB_VERSION = 1;
-    public static final String DB_NAME = "NotJPMC.db";
+    private static final int DB_VERSION = 1;
+    private static final String DB_NAME = "NotJPMC.db";
 
     //sql entries and data type used
     private static final String TEXT_TYPE = "TEXT";
@@ -30,9 +30,21 @@ public class NotJPMCDbHelper extends SQLiteOpenHelper{
                     NotJPMCContract.NotJPMCEntry.COLUMN_NAME_SUBTITLE + TEXT_TYPE +
                     " )"; //Took class variables to populate database in Helper from Contract
 
+    //SQL_DELETE_ENTRIES for locating table if it exists
+    public static final String SQL_DELETE_ENTRIES = "DROP TABLE IF EXISTS " +
+            NotJPMCContract.NotJPMCEntry.TABLE_NAME;
+
     //implemented after extending SQLiteOpenHelper
-    public NotJPMCDbHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
+    private NotJPMCDbHelper(Context context) {
+        super(context, DB_NAME, null, DB_VERSION);
+    }
+
+    //synchronization to access a table once per activity
+    static public synchronized NotJPMCDbHelper getInstance (Context context){
+        if (notJPMCDbHelper == null){
+            notJPMCDbHelper = new NotJPMCDbHelper(context);
+        }
+        return notJPMCDbHelper;
     }
 
     @Override
