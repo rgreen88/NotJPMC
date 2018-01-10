@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
 
         //must run first for Db
         SQLiteDatabase.loadLibs(this);
+
+        //calling database...will run exception error if above isn't called first
+        NotJPMC();
     }
 
     //creating method to run database at start using NotJPMCDbHelper
